@@ -1,0 +1,303 @@
+<div class="whole-page">
+  <div class="head-sec">
+   <div class="icon-sec">
+    <img src="assets/icon.png" alt="saketa">
+    <div class="icon-name">saketa</div> 
+   </div>
+
+   <div class="head-name-sec">
+    <div class="heading">Employee Directory</div>
+    <div class="head-caption">The Ultimate People Directory Experience</div>
+   </div>
+  
+   <div class="profile-sec">
+    <div class="welcome-sec"><span>Welcome</span>, Andrew Philips</div>
+    <img src="assets/andrew.png" alt="stamp size photo">
+   </div>
+  </div>
+  <div class="mian-head-underline">
+  <hr> 
+  </div>
+  <div class="employee-sec">
+   <div class="employee-left-sec">
+    <div class="departments-sec">
+     <dl>
+      <dt>Departments</dt>
+      <dd>IT (<span class="it">0</span>)</dd>
+      <dd>Human Resources (<span class="hr">0</span>)</dd>
+      <dd>MD (<span class="md">0</span>)</dd>
+      <dd>Sales (<span class="sales">0</span>)</dd>
+     </dl>
+    </div>
+    
+    <div class="offices-sec">
+     <dl>
+      <dt>Offices</dt>
+      <dd>Seatle (<span class="seatle">0</span>)</dd>
+      <dd>India (<span class="india">0</span>)</dd>
+     </dl>
+    </div>
+    
+    <div class="job-titles-sec">
+     <dl>
+      <dt>Job Titles</dt>
+      <dd>SharePoint Practice Head (<span class="sharepoint-practice-head">0</span>)</dd>
+      <dd>.Net Development Lead (<span class="dotnet-dev-lead">0</span>)</dd>
+      <dd>Recruiting Expert (<span class="recruit-exp">0</span>)</dd>
+      <dd>BI Developer (<span class="bi-dev-head">0</span>)</dd>
+      <dd>Business Analyst (<span class="busi-analyst">0</span>)</dd>
+     </dl>
+    </div>
+
+    <div class="see-more-sec">
+     <a href="#">view more</a>
+    </div>
+   </div>
+
+   <div class="employee-right-sec">
+    <div class="alphabet-sec">
+     <button type="button" class="view-all"><img src="assets/profile_icon.png"></button>
+     <button type="button" class="alpha">A</button>
+     <button type="button" class="alpha">B</button>
+     <button type="button" class="alpha">C</button>
+     <button type="button" class="alpha">D</button>
+     <button type="button" class="alpha">E</button>
+     <button type="button" class="alpha">F</button>
+     <button type="button" class="alpha">G</button>
+     <button type="button" class="alpha">H</button>
+     <button type="button" class="alpha">I</button>
+     <button type="button" class="alpha">J</button>
+     <button type="button" class="alpha">K</button>
+     <button type="button" class="alpha">L</button>
+     <button type="button" class="alpha">M</button>
+     <button type="button" class="alpha">N</button>
+     <button type="button" class="alpha">O</button>
+     <button type="button" class="alpha">P</button>
+     <button type="button" class="alpha">Q</button>
+     <button type="button" class="alpha">R</button>
+     <button type="button" class="alpha">S</button>
+     <button type="button" class="alpha">T</button>
+     <button type="button" class="alpha">U</button>
+     <button type="button" class="alpha">V</button>
+     <button type="button" class="alpha">W</button>
+     <button type="button" class="alpha">X</button>
+     <button type="button" class="alpha">Y</button>
+     <button type="button" class="alpha">Z</button>
+    </div>
+  
+    <div class="search-filter-add-employee-sec">
+     <div class="search-sec">
+      <div class="keyword-search">Search</div>
+      <div class="search-field">
+       <img src="assets/search.png" alt="search"/>
+       <input class = "keyword-field" type="text" placeholder="Enter any keyword">
+      </div>
+      <input type="button" class="clear-btn" value="Clear">
+     </div>
+
+     <div class="filter-sec">
+      <div class="filter-label">Filter by</div> 
+      <div class="filter-select">
+       <select name="filter-name">
+        <option value="" selected disabled hidden>Choose Option</option>
+        <option value="first name">First Name</option>
+        <option value="last name">Last Name</option>
+        <option value="preferred name">Preferred Name</option>
+        <option value="email">Email</option>
+        <option value="office">Office</option>
+        <option value="dept">Department</option>
+        <option value="job-title">Job Title</option>
+        <option value="ph-no">Phone Number</option>
+        <option value="skype-id">Skype Id</option>
+       </select>
+      </div>
+     </div>
+
+     <div class="add-sec">
+      <input type="button" (click)="toggleAddEmpForm()" class="add-emp-btn" value="Add Employee">
+     </div>
+    </div>
+
+    <div class="note-sec">
+     <b>Note:</b> Please use the advance filter options to refine your results 
+    </div>
+
+    <div id="profiles-sec">
+    </div>
+   </div>
+  </div>
+ </div>
+
+
+ <form action="" method="POST" *ngIf="isFormOpen" [formGroup]="empForm">
+  <div class="add-emp-sec">
+
+   <div class = "top-head">
+   <div class="add-emp-head">
+    <h3>Add Employee</h3>
+   </div>
+   <!--<div class="edit-det-head">
+    <h3>Edit Details</h3>
+   </div>-->
+   <div class="cross-btn"><img (click)="toggleAddEmpForm()" src="assets/cross.jfif" alt="cross"></div>
+   </div>
+   <div class="hr-line">
+    <hr>
+   </div>
+   <div class="emp-sec">
+    <div class="FN">
+     <label>First Name</label>
+     <input type="text" formControlName="firstName" class="first-name" placeholder="Enter First Name">
+     <small *ngIf="firstName.invalid && firstName.touched">please enter valid first name</small>
+     
+    </div>
+    <div class="LN">
+     <label>Last Name</label>
+     <input type="text" formControlName="lastName" class="last-name" placeholder="Enter Last Name">
+     <small *ngIf="lastName.invalid && lastName.touched">please enter valid last name</small>
+    </div>
+   </div>
+
+   <div class="emp-sec">
+    <div class="PN">
+     <label>Preferred Name</label>
+     <input type="text" formControlName="preferredName" class="prefer-name" placeholder="Enter preferred Name">
+    </div>
+    <div class="EM">
+     <label>Email</label>
+     <input type="email" formControlName="email" class="mail" placeholder="Enter Email">
+     <small *ngIf="firstName.invalid && firstName.touched">please enter valid e-mail</small>
+    </div>
+    
+   </div>
+ 
+   <div class="emp-sec">
+    <div class="job-titles">
+     <label>Job Title</label>
+     <select class="job-title-select" formControlName="jobTitle">
+     <option value="" selected disabled hidden>Choose Option</option>
+     <option value="SharePoint Practice Head">SharePoint Practice Head</option>
+     <option value=".Net Development Lead">.Net Development Lead</option>
+     <option value="Recruiting Expert">Recruiting Expert</option>
+     <option value="BI Developer">BI Developer</option>
+     <option value="Business Analyst">Business Analyst</option>
+     </select>
+     <small *ngIf="empForm.get('jobTitle').invalid">please select jobtitle</small>
+    </div>
+
+    <div class="office">
+     <label>Office</label>
+     <select class="office-select" formControlName="office">
+      <option value="" selected disabled hidden>Choose Option</option>
+      <option value="Seatle">Seatle</option>
+      <option value="India">India</option>
+     </select>
+     <small *ngIf="empForm.get('office').invalid">please select office</small>
+    </div>
+   </div>
+  
+
+
+   <div class="emp-sec">
+    <div class="dept">
+     <label>Department</label>
+     <select class="dept-select" formControlName="department">
+      <option value="" selected disabled hidden>Choose Option</option>
+      <option value="IT">IT</option>
+      <option value="HR">HR</option>
+      <option value="MD">MD</option> 
+      <option value="Sales">Sales</option>
+     </select>
+     <small *ngIf="empForm.get('department').invalid">please select department</small>
+    </div>
+
+    <div class="phno">
+     <label>Phone Number</label>
+     <input type="tel" formControlName="phoneNo" class="phone-no" placeholder="Enter Mobile Number">
+     <small *ngIf="empForm.get('phoneNo').invalid && empForm.get('phoneNo').touched">please enter valid phone number</small>
+    </div>
+    
+   </div>
+   
+   <div class="emp-sec">
+    <div class="skypeId-sec">
+     <label>Skype Id</label>
+     <input type="text" formControlName="skypeId" class="skype-id" placeholder="Enter Skype Id">
+     <small *ngIf="empForm.get('skypeId').invalid && empForm.get('skypeId').touched">please enter valid skype id</small>
+    </div>
+
+    <div class="profile-img-sec">
+     <label for="upload-image">Profile Image</label>
+     <div class="upload-img">
+      <label for="prof-img">
+        <div class="upload-label">upload</div>
+        <img src="assets/prof_icon.jfif" alt="empty"/>
+      </label>
+      <input type="file" id="prof-img"  accept="image/*" hidden/>
+      <!--<small *ngIf="empForm.get('imageFile').invalid && empForm.get('imageFile').touched">please upload image</small>-->
+     </div>
+    </div> 
+   </div>
+   <br>
+
+   <div class="confirm-cancel-sec">
+    <button type="submit" (click)="storeSubmissionDetails()" class="submit-btn">Submit</button>
+    <!--<button type="button" class="save-btn">Save</button>-->
+    <button type="button" (click)="toggleAddEmpForm()" class="cancel-add-btn">Cancel</button>
+    <!--<button type="button" class="cancel-edit-btn">Cancel</button>-->
+   </div>
+  </div>   
+ </form>
+
+ <div class="profile-detail">
+  <div class="emp-head">
+    <h2>Employee Details</h2>
+  </div>
+  <div class="profile-image">
+   <img src= "assets/profile_icon.png" alt="image">
+  </div>
+  <table>
+   <tr>
+    <td><b>First Name</b></td>
+    <td><div class="f_name"></div></td>
+   </tr>
+   <tr>
+     <td><b>Last Name</b></td>
+     <td><div class="l_name"></div></td>
+   </tr>
+   <tr>
+     <td><b>Preferred Name</b></td>
+     <td><div class="p_name"></div></td>
+   </tr>
+   <tr>
+     <td><b>E-mail</b></td>
+     <td><div class="e-mail"></div></td>
+   </tr>
+   <tr>
+     <td><b>Job Title</b></td>
+     <td><div class="job"></div></td>
+   </tr>
+   <tr>
+     <td><b>Office</b></td>
+     <td><div class="off"></div></td>
+   </tr>
+   <tr>
+     <td><b>Department</b></td>
+     <td><div class="depmnt"></div></td>
+   </tr>
+   <tr>
+
+     <td><b>Phone No</b></td>
+     <td><div class="ph-no"></div></td>
+   </tr>
+   <tr>
+     <td><b>Skype Id</b></td>
+     <td><div class="skype"></div></td>
+   </tr>
+   </table>
+   <div class="buttons-sec">
+    <button type="button" class="edit-btn">Edit</button>
+    <button type="button" class="close-btn">Close</button>
+   </div>
+  
+ </div>  
